@@ -1,5 +1,28 @@
 import Head from 'next/head'
 
+// import FirebaseAuthUserInfo from '../src/firebase/FirebaseAuthUserInfo';
+import FirebaseAuthSigninButton from '../src/firebase/FirebaseAuthSigninButton';
+import FirebaseAuthSignupButton from '../src/firebase/FirebaseAuthSignupButton';
+import FirebaseAuthGoogleButton from '../src/firebase/FirebaseAuthGoogleButton';
+import FirebaseAuthSignoutButton from '../src/firebase/FirebaseAuthSignoutButton';
+import FirestoreAddButton from '../src/firebase/FirestoreAddButton';
+import FirestoreList from '../src/firebase/FirestoreList';
+
+import { initializeApp } from 'firebase/app';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyDf9wc8MCB3H_gmvQbxsuBTo5QCadRu8tg',
+  authDomain: 'litely-f6e0d.firebaseapp.com',
+  projectId: 'litely-f6e0d',
+  storageBucket: 'litely-f6e0d.appspot.com',
+  messagingSenderId: '400014490635',
+  appId: '1:400014490635:web:47198f41e8f33d603e5b0e',
+  measurementId: 'G-9Z9X0FJZRL'
+}
+
+console.log('firebase')
+initializeApp(firebaseConfig);
+
 export default function Home() {
   return (
     <div className="container">
@@ -9,6 +32,13 @@ export default function Home() {
       </Head>
 
       <main>
+        {/* <FirebaseAuthUserInfo /> */}
+        <FirebaseAuthSignupButton />
+        <FirebaseAuthSigninButton />
+        <FirebaseAuthGoogleButton />
+        <FirebaseAuthSignoutButton />
+        <FirestoreAddButton />
+        <FirestoreList />
         <h1 className="title">
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
